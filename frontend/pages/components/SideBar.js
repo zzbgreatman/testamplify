@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 
-import { mainListItems, secondaryListItems } from './ListItems';
+import { mainListItems, secondaryListItems } from './listItems';
 import CustomSelects from './Simpleselect'
 
 const drawerWidth = 240;
