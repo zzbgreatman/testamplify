@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 
-import { mainListItems, secondaryListItems } from './listItems';
+//import { mainListItems, secondaryListItems } from './listItems';
 import CustomSelects from './Simpleselect'
 
 const drawerWidth = 240;
@@ -122,9 +122,9 @@ export default function SideBar(props) {
                 </Toolbar>
                 <Divider />
                 <List component="nav">
-                    {mainListItems}
-                    <Divider sx={{ my: 1 }} />
-                    {secondaryListItems}
+                    // {mainListItems}
+                    // <Divider sx={{ my: 1 }} />
+                    // {secondaryListItems}
                 </List>
             </Drawer>
         </React.Fragment>
