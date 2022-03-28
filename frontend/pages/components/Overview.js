@@ -26,9 +26,9 @@ export default function Overview(props) {
     const rows = props.data || [];
     const title = "Quick view";
 
-    properties.forEach((property) => {
-      headers.push(<TableCell key={property} >{property} </TableCell>)
-    })
+    // properties.forEach((property) => {
+    //   headers.push(<TableCell key={property} >{property} </TableCell>)
+    // })
   
     rows.map((e) => {
       let link = "/file/" + e.name.slice(0,-4).toString();
@@ -47,14 +47,14 @@ export default function Overview(props) {
 
     let failtask = 0;
     let alltask = 0;
-    props.data.forEach(element => {
-        element.snaps.forEach(e => {
-            if (e.status != "success") {
-                failtask++;
-            }
-            alltask++;
-        })
-    });
+    // props.data.forEach(element => {
+    //     element.snaps.forEach(e => {
+    //         if (e.status != "success") {
+    //             failtask++;
+    //         }
+    //         alltask++;
+    //     })
+    // });
 
     return (
         <Box
