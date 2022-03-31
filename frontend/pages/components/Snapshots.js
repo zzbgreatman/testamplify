@@ -17,7 +17,7 @@ import CustomTable from './CustomTable';
 import Footer from './Footer';
 
 export default function Snapshots(props) {
-  const properties = ['Id', 'Name', 'Location', 'InitDate', 'Expiration', 'Amount', 'Info', ''];
+  const properties = [ 'Name', 'Location', 'Time', 'Amount', 'Info', ''];
   const rows = props.data || [];
   const headers = [];
   const values = [];
@@ -27,15 +27,13 @@ export default function Snapshots(props) {
   })
 
   rows.map((row) => (
-    row.snaps.forEach((e) => {
+    row.children.forEach((e) => {
       let path = "/file/" + row.name.slice(0, -4).toString() + "/" + e.id;
         values.push(
           <TableRow key={e.id}>
-            <TableCell>{e.id}</TableCell>
             <TableCell>{e.name}</TableCell>
             <TableCell>{e.loc}</TableCell>
             <TableCell>{e.init}</TableCell>
-            <TableCell>{e.expi}</TableCell>
             <TableCell>{`${e.amount}kb`}</TableCell>
             <TableCell><Link href={path} ><MoreHorizIcon /></Link></TableCell>
           </TableRow>

@@ -9,7 +9,7 @@ import Title from './Title';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 export default function FilesTable(props) {
-  const properties = ['Id', 'Name', 'Location', 'InitDate', 'Expiration', 'Amount', ''];
+  const properties = ['Name', 'Location', 'TimeAdd', 'Amount', ''];
   const headers = [];
   const values = [];
   const rows = props.data || [];
@@ -21,7 +21,6 @@ export default function FilesTable(props) {
   rows.map((e) => {
     values.push(
       <TableRow key={e.id + 300}>
-        <TableCell>{e.id}</TableCell>
         <TableCell>{e.name}</TableCell>
         <TableCell>{e.loc}</TableCell>
         <TableCell>{e.init}</TableCell>

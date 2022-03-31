@@ -15,7 +15,7 @@ import CustomTable from './CustomTable';
 import Footer from './Footer';
 
 export default function Sources(props) {
-  const properties = ['Id', 'Name', 'Location', 'InitDate', 'Expiration', 'Amount', ''];
+  const properties = ['Name', 'Location', 'Time', 'Amount', ''];
   const headers = [];
   const values = [];
   const rows = props.data || [];
@@ -28,11 +28,9 @@ export default function Sources(props) {
     let path = "/file/" + e.name.slice(0, -4).toString();
     values.push(
       <TableRow key={e.id + 300}>
-        <TableCell>{e.id}</TableCell>
         <TableCell>{e.name}</TableCell>
         <TableCell>{e.loc}</TableCell>
         <TableCell>{e.init}</TableCell>
-        <TableCell>{e.expi}</TableCell>
         <TableCell>{`${e.amount}kb`}</TableCell>
         <TableCell><Link href={path} data={e} ><MoreVertIcon /></Link></TableCell>
       </TableRow>

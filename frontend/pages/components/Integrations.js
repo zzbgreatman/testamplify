@@ -16,22 +16,20 @@ import Footer from './Footer';
 import CustomTable from './CustomTable';
 
 export default function Integrations(props) {
-  const properties = ['Taskid', 'FileName', 'Location', 'Time',  'Type', 'Status', 'Info'];
+  const properties = ['Name', 'Location', 'Time',  'Type', 'Status', 'Info'];
   const rows = props.data || [];
   const headers = [];
   const values = [];
-
   properties.forEach((data) => {
     headers.push(<TableCell key={data}>{data} </TableCell>)
   })
 
   rows.map((row) => (
-    row.snaps.forEach((e) => {
+    row.children.forEach((e) => {
       let path = "/file/" + row.name.slice(0,-4).toString() + "/" + e.id + "/" + e.tid;
 
       values.push(
         <TableRow key={e.id}>
-          <TableCell>{e.id}</TableCell>
           <TableCell>{e.name}</TableCell>
           <TableCell>{e.loc}</TableCell>
           <TableCell>{e.init}</TableCell>

@@ -19,14 +19,13 @@ export default function Snaps(props) {
   const { id } = router.query;
   const data = props.data || createFakeData(1);
 
-  const properties = ['Select', 'Id', 'Name', 'Location', 'InitDate', 'Expiration', 'Amount'];
+  const properties = ['Select', 'Name', 'Location', 'InitDate', 'Amount'];
   const headers = props.headers || [];
   const values = props.values || [];
   const [actionId, setActionId ] = React.useState([]);
 
   const handleSelect = (e) => {
     setActionId(e);
-    console.log(e);
   };
   const title = "Snapshots";
 
@@ -35,15 +34,13 @@ export default function Snaps(props) {
   })
 
   data.map((row) => (
-    row.snaps.forEach((e) => {
+    row.children.forEach((e) => {
       values.push(
         <TableRow key={e.id}>
           <TableCell> <Checkbox onSelect={handleSelect} /> </TableCell>
-          <TableCell>{e.id}</TableCell>
           <TableCell>{e.name}</TableCell>
           <TableCell>{e.loc}</TableCell>
           <TableCell>{e.init}</TableCell>
-          <TableCell>{e.expi}</TableCell>
           <TableCell>{`${e.amount}kb`}</TableCell>
         </TableRow>
       )
